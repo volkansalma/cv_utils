@@ -1,13 +1,10 @@
 # Import required modules
 import cv2
 import numpy as np
-import os
 import glob
-
 
 # Define the dimensions of checkerboard
 CHECKERBOARD = (6, 9)
-
 
 # stop the iteration when specified
 # accuracy, epsilon, is reached or
@@ -24,13 +21,12 @@ twodpoints = []
 
 
 # 3D points real world coordinates
-objectp3d = np.zeros((1, CHECKERBOARD[0]
-                    * CHECKERBOARD[1],
-                    3), np.float32)
-objectp3d[0, :, :2] = np.mgrid[0:CHECKERBOARD[0],
-                            0:CHECKERBOARD[1]].T.reshape(-1, 2)
-prev_img_shape = None
+objectp3d = np.zeros((1, CHECKERBOARD[0] * CHECKERBOARD[1], 3), np.float32)
 
+objectp3d[0, :, :2] = np.mgrid[0:CHECKERBOARD[0],
+                               0:CHECKERBOARD[1]].T.reshape(-1, 2)
+
+prev_img_shape = None
 
 # Extracting path of individual image stored
 # in a given directory. Since no path is
@@ -65,9 +61,7 @@ for filename in images:
         twodpoints.append(corners2)
 
         # Draw and display the corners
-        image = cv2.drawChessboardCorners(image,
-                                        CHECKERBOARD,
-                                        corners2, ret)
+        image = cv2.drawChessboardCorners(image, CHECKERBOARD, corners2, ret)
 
     cv2.imshow('img', image)
     cv2.waitKey(0)
