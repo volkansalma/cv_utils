@@ -4,6 +4,7 @@ import sys
 
 
 # Thanks to https://github.com/TemugeB/QR_code_orientation_OpenCV
+# and https://www.delftstack.com/howto/python/opencv-solvepnp/
 def read_camera_parameters(filepath='camera_parameters/intrinsic.dat'):
 
     inf = open(filepath, 'r')
