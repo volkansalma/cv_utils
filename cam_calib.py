@@ -4,7 +4,7 @@ import numpy as np
 import glob
 
 # Define the dimensions of checkerboard
-CHECKERBOARD = (6, 9)
+CHECKERBOARD = (7, 9)
 
 # stop the iteration when specified
 # accuracy, epsilon, is reached or
@@ -32,7 +32,7 @@ prev_img_shape = None
 # in a given directory. Since no path is
 # specified, it will take current directory
 # jpg files alone
-images = glob.glob('*.jpg')
+images = glob.glob('images/cal_1/*.jpg')
 
 for filename in images:
     image = cv2.imread(filename)
