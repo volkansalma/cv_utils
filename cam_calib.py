@@ -4,7 +4,7 @@ import numpy as np
 import glob
 
 # Define the dimensions of checkerboard
-CHECKERBOARD = (6, 9)
+CHECKERBOARD = (7, 9)
 
 # stop the iteration when specified
 # accuracy, epsilon, is reached or
@@ -26,13 +26,16 @@ objectp3d = np.zeros((1, CHECKERBOARD[0] * CHECKERBOARD[1], 3), np.float32)
 objectp3d[0, :, :2] = np.mgrid[0:CHECKERBOARD[0],
                                0:CHECKERBOARD[1]].T.reshape(-1, 2)
 
+# scale the unit squares by 20mm
+objectp3d = np.multiply(objectp3d, 0.02)
+
 prev_img_shape = None
 
 # Extracting path of individual image stored
 # in a given directory. Since no path is
 # specified, it will take current directory
 # jpg files alone
-images = glob.glob('*.jpg')
+images = glob.glob('images/cal_1/*.jpg')
 
 for filename in images:
     image = cv2.imread(filename)
