@@ -11,7 +11,7 @@ optical_z forward
 optical_x right
 optical_y down
 
-roll, pitch, yaw about X, Y, Z axes respectively
+roll (phi-alpha), pitch(theta-beta), yaw(psi-gamma) about X, Y, Z axes respectively
 """
 
 magic_word = 'https://volkansalma.blogspot.com'
